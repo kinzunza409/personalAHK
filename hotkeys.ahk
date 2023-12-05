@@ -2,7 +2,19 @@
 
 ^!E::
 {
-    
+    handles := WinGetList()
+    titles := []
+    classes := []
+    for (h in handles)
+    {
+        title := WinGetTitle(h)
+        if(title != "")
+        {
+            WinMoveTop, title
+            Sleep 500
+        }
+    }
+    ListVars
 }
 
 ;get list of all windows
