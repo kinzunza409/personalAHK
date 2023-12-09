@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 
-^!E::
+^!e::
 {
     handles := WinGetList()
     titles := []
@@ -10,7 +10,7 @@
         title := WinGetTitle(h)
         if(title != "")
         {
-            WinMoveTop, title
+            WinMoveTop title
             Sleep 500
         }
     }
@@ -22,3 +22,17 @@
 ;   activate win
 ;   alt+f4
 ;   wait until closed
+
+
+!^t:: ; open personal Todoist
+{   
+    Run "firefox.exe -new-window=`"https://app.todoist.com/app/filter/2343554983`""
+}
+
+!^a:: ; open agfocused windows
+{
+    Run "firefox.exe -new-window=`"https://app.todoist.com/app/project/2306136070`""
+    Run "https://track.toggl.com/timer"
+    Run "C:\Users\`"%USERNAME%`"\AppData\Local\slack\slack.exe"
+}
+
